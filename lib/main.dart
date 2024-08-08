@@ -75,6 +75,8 @@
 //   }
 // }
 
+import 'package:bloc_app/bloc/imagepicker/image_bloc.dart';
+import 'package:bloc_app/ui/image_picker_screen.dart';
 import 'package:bloc_app/ui/switch_example_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -95,16 +97,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
+      //aise ek block provider aur phir doosra uska child is hectic and ungood practice toh uski jagah apan ko multiblocprovider
       providers: [
         BlocProvider(create: (_) => SwitchBloc()),
         BlocProvider(create: (_) => SliderBloc()),
+        BlocProvider(create: (_) => ImagePickerBloc()),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const ExampleTwo(),
+        home: ImagePickerScreen(),
       ),
     );
   }
