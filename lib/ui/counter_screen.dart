@@ -41,7 +41,9 @@ class _CounterScreenState extends State<CounterScreen> {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    context.read<CounterBloc>().add(IncrementCounter());
+                    context
+                        .read<CounterBloc>()
+                        .add(IncrementCounter()); //yeh line must hegi bhau
                   },
                   child: const Text('Increment'),
                 ),

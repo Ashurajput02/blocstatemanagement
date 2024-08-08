@@ -6,12 +6,14 @@ class CounterBloc extends Bloc<CounterEvent, CounterState> {
   CounterBloc() : super(CounterState()) {
     //mein super mein meri initial state kya hai voh dene wala hoon
 
-    on<IncrementCounter>(_increment);
+    on<IncrementCounter>(
+        _increment); //jaise hi incrementcounter event hit hoga tab increment function chalega
 
     on<DecrementCounter>(_decrement);
   }
 
   void _increment(IncrementCounter event, Emitter<CounterState> emit) {
+    //this event is an instance of IncrementCounter
     emit(state.copyWith(counter: state.counter + 1));
     print("hello increment");
     print("${state.counter}");
