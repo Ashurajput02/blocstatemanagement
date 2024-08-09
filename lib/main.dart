@@ -76,8 +76,10 @@
 // }
 
 import 'package:bloc_app/bloc/imagepicker/image_bloc.dart';
+import 'package:bloc_app/bloc/to_do/todo_bloc.dart';
 import 'package:bloc_app/ui/image_picker_screen.dart';
 import 'package:bloc_app/ui/switch_example_screen.dart';
+import 'package:bloc_app/ui/todo_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bloc_app/bloc/slider/slider_bloc.dart';
@@ -102,13 +104,14 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => SwitchBloc()),
         BlocProvider(create: (_) => SliderBloc()),
         BlocProvider(create: (_) => ImagePickerBloc()),
+        BlocProvider(create: (_) => ToDoBloc()),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: ImagePickerScreen(),
+        home: ToDoScreen(),
       ),
     );
   }
