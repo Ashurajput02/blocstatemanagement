@@ -75,8 +75,11 @@
 //   }
 // }
 
+import 'package:bloc_app/bloc/favouriteapp/favourite_app_bloc.dart';
 import 'package:bloc_app/bloc/imagepicker/image_bloc.dart';
 import 'package:bloc_app/bloc/to_do/todo_bloc.dart';
+import 'package:bloc_app/repo/favourite_list_repo.dart';
+import 'package:bloc_app/ui/favouriteapp.dart';
 import 'package:bloc_app/ui/image_picker_screen.dart';
 import 'package:bloc_app/ui/switch_example_screen.dart';
 import 'package:bloc_app/ui/todo_screen.dart';
@@ -105,13 +108,16 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => SliderBloc()),
         BlocProvider(create: (_) => ImagePickerBloc()),
         BlocProvider(create: (_) => ToDoBloc()),
+        BlocProvider(create: (_) => favouriteBloc(favouriteRepository())),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
+        themeMode: ThemeMode.dark,
         theme: ThemeData(
+          brightness: Brightness.dark,
           primarySwatch: Colors.blue,
         ),
-        home: ToDoScreen(),
+        home: FavouriteAppScreen(),
       ),
     );
   }

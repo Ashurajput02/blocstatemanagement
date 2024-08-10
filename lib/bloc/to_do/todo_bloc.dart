@@ -28,12 +28,14 @@ class ToDoBloc extends Bloc<ToDoEvent, ToDoState> {
   }
 
   void _onAddItem(AddItem event, Emitter<ToDoState> emit) {
+    //list aise hi direct pass nahin hoti thats why went with this
     _todos.add(event.item);
     emit(state.copyWith(todosList: List.from(_todos)));
   }
 
   void _onDeleteItem(DeleteItem event, Emitter<ToDoState> emit) {
-    _todos.removeAt(event.index);
+    _todos.removeAt(
+        event.index); //add and removeat are two typical functions for list
     emit(state.copyWith(todosList: List.from(_todos)));
   }
 }

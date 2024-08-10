@@ -1,7 +1,7 @@
 // import 'package:equatable/equatable.dart';
 
 // class toDoState extends Equatable {
-//   //ruk idhar teri jo cheez change ho rhi hain voh ek list hai so item count jo tu soch rha hai voh nahi balki ui mei
+
 //   //list badal rhi hai
 
 //   //final int itemCount;
@@ -19,9 +19,12 @@
 import 'package:equatable/equatable.dart';
 
 class ToDoState extends Equatable {
+  //   //ruk idhar teri jo cheez change ho rhi hain voh ek list hai so item count jo tu soch rha hai voh nahi balki ui mei
   final List<String> todosList;
 
-  const ToDoState({this.todosList = const []});
+  const ToDoState(
+      {this.todosList =
+          const []}); //intinally meri todo list empty hai and thats why it is constant
 
   @override
   List<Object> get props => [todosList];

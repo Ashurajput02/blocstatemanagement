@@ -28,6 +28,7 @@ abstract class ToDoEvent extends Equatable {
 }
 
 class AddItem extends ToDoEvent {
+  //add item trigger hone par mujhe uss event se data mil raha hai
   final String item;
 
   const AddItem({required this.item});
@@ -37,7 +38,8 @@ class AddItem extends ToDoEvent {
 }
 
 class DeleteItem extends ToDoEvent {
-  final int index;
+  final int
+      index; //mujhe kaise pata lagega ki konsa index /item delete karna hai
 
   const DeleteItem({required this.index});
 
